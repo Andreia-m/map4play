@@ -1,0 +1,51 @@
+{% extends "quadras/base.html" %}
+
+{% block content %}  
+
+    <!-- Cabeçalho -->
+    <div class="header">
+         <!-- Ajustado para usar o link correto -->
+        <a href="/incluir/" class="btn btn-light cadastrar-btn">Cadastrar Quadras</a>
+    </div>
+
+<header class="hero">
+    <h1>Map4Play - O mapa certo para o seu jogo!</h1>
+    <h4>Encontre quadras públicas de basquete em São Paulo</h4>
+    
+</header>
+
+<!-- Formulário de Pesquisa -->
+<div class="container search-bar">
+    <form method="GET" action="">
+        <div class="input-group">
+            <input type="text" name="q" class="form-control" placeholder="Digite bairro, cidade ou parte do endereço">
+            <button class="btn btn-dark" type="submit">
+                <i class="bi bi-search"></i> <!-- Ícone de lupa -->
+                Pesquisar
+            </button>
+        </div>
+    </form>
+</div>
+
+<!-- Lista de Quadras -->
+<div class="container">
+    <h2>Quadras</h2>
+    <div class="row">
+        <!-- Conteúdo estático (remova o comentário para Django posteriormente) -->
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-header">
+                    Nome da Quadra
+                </div>
+                <div class="card-body">
+                    Endereço da Quadra<br>
+                    <a href="#" class="btn btn-dark mt-5">Detalhes</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    
+{% endblock %}
