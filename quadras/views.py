@@ -1,6 +1,9 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .models import Quadra  # Importe o modelo Quadra
 from django.db.models import Q
+from .forms import QuadraForm
+from django.contrib import messages
+
 
 def home(request):
     # Obter o valor da pesquisa (campo "q")
@@ -17,3 +20,23 @@ def home(request):
 
     # Passar as quadras para o template
     return render(request, 'quadras/home.html', {'quadras': quadras, 'query': query})
+
+
+
+def adicionar_quadra(request):
+    if request.method == 'POST':
+        form = QuadraForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('sucesso')  # Redireciona para a página sucesso.html
+        else:
+            messages.error(request, "Erro ao cadastrar a quadra. Verifique os dados.")  # Mantém no formulário com erro
+    
+    form = QuadraForm()
+    return render(request, 'quadras/adicionar_quadra.html', {'form': form})
+
+
+def sucesso(request):
+    return render(request, 'quadras/sucesso.html')  
+
+

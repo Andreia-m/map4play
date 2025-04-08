@@ -4,22 +4,21 @@
 
     <!-- Cabeçalho -->
     <div class="header">
-         <!-- Ajustado para usar o link correto -->
-        <a href="/incluir/" class="btn btn-light cadastrar-btn">Cadastrar Quadras</a>
+        <a href="{% url 'adicionar_quadra' %}" class="btn btn-light cadastrar-btn me-1">Adicionar Quadras</a>
     </div>
 
 <header class="hero">
-    <h1>Map4Play - O mapa certo para o seu jogo!</h1>
+    <h1>Map4Play - O mapa certo para o seu jogo!</h1>   
     <h4>Encontre quadras públicas de basquete em São Paulo</h4>
     
 </header>
 
-<!-- Formulário de Pesquisa -->
+<!-- Barra de Pesquisa -->
 <div class="container search-bar">
     <form method="GET" action="{% url "home" %}">
-        <div class="input-group">
+        <div class="input-group" style="width: 100%;">
             <input type="text" name="q" value="{{ query }}" class="form-control" placeholder="Digite nome da quadra, bairro, cidade ou parte do endereço">
-            <button class="btn btn-dark" type="submit">
+            <button class="btn btn-dark me-1" type="submit">
                 <i class="bi bi-search"></i> <!-- Ícone de lupa -->
                 Pesquisar
             </button>
@@ -28,7 +27,7 @@
 </div>
 
 <!-- Lista de Quadras -->
-<div class="container">
+<div class="container mt-5">
     <h2>Quadras</h2>
     <!-- Verifica se existem quadras -->
      {% if quadras %}

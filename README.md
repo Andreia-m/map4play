@@ -4,67 +4,61 @@ README.md
 
 Python 3.12.2 - Conferir a versão: python --version 
 
-Django 5.2 - Conferir a versão: django-admin –version 
+Django 5.2 - Conferir a versão: django-admin –-version 
 
 Git – Conferir a instalação: git -v 
 
  
 
-## Sequência para criar o projeto 
+## Como rodar o projeto baixado 
 
-Criar o ambiente virtual  
+Baixar o projeto do GitHub:
+
+    git clone https://github.com/Andreia-m/map4play.git .
+
+
+Criar o ambiente virtual:  
 
     python –m venv venv 
 
  
-
-Ativar o ambiente virtual 
+Ativar o ambiente virtual: 
 
     venv\Scripts\activate 
 
  
+Instalar as dependências: 
 
-Instalar o Django 
+    pip install -r requirements.txt
 
-    pip install django 
 
- 
-
-Criar o projeto com Django 
-
-    django-admin startproject sitequadras .  
-
- 
-
-Gerar o arquivo com as dependências 
-
-Após instalar as dependências, execute o comando abaixo: 
-
-    pip freeze > requirements.txt 
-
- 
-
-Executar as migrations 
+Executar as migration para criar as tabelas no banco de dados: 
 
     python manage.py migrate 
 
+
+Criar o super usuário: 
+
+    python manage.py createsuperuser 
  
 
-Rodar o projeto 
+Rodar o projeto: 
 
     python manage.py runserver 
 
  
-
-Acessar o padrão do Python 
+Acessar o padrão do Python: 
 
     http://127.0.0.1:8000/ 
 
+
+Acessar o sistema administrativo padrão do Django:
+    http://127.0.0.1:8000/admin
+
+
  
 
-Criar um super usuário 
 
-    python manage.py createsuperuser 
 
  
 
