@@ -39,4 +39,11 @@ def adicionar_quadra(request):
 def sucesso(request):
     return render(request, 'quadras/sucesso.html')  
 
+def detalhes_quadra(request, id):
+    quadra = Quadra.objects.get(id=id)
+    return render(request, 'quadras/detalhes_quadra.html', {'quadra': quadra})
+
+
+
+
 

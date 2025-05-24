@@ -10,21 +10,28 @@
 <header class="hero">
     <h1>Map4Play - O mapa certo para o seu jogo!</h1>   
     <h4>Encontre quadras públicas de basquete em São Paulo</h4>
+    <br>
+    <br>
+   
+    <!-- Barra de Pesquisa -->
+    <div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6 col-sm-10">
+            <form method="GET" action="{% url 'home' %}">
+                <div class="input-group">
+                    <input type="text" name="q" value="{{ query }}" class="form-control" placeholder="Buscar por nome da quadra, bairro ou cidade">
+                    <button class="btn btn-dark me-1" type="submit">
+                        <i class="bi bi-search"></i> Pesquisar
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
     
 </header>
 
-<!-- Barra de Pesquisa -->
-<div class="container search-bar">
-    <form method="GET" action="{% url "home" %}">
-        <div class="input-group" style="width: 100%;">
-            <input type="text" name="q" value="{{ query }}" class="form-control" placeholder="Digite nome da quadra, bairro, cidade ou parte do endereço">
-            <button class="btn btn-dark me-1" type="submit">
-                <i class="bi bi-search"></i> <!-- Ícone de lupa -->
-                Pesquisar
-            </button>
-        </div>
-    </form>
-</div>
+
 
 <!-- Lista de Quadras -->
 <div class="container mt-5">
@@ -41,7 +48,7 @@
                         <div class="card-body">
                             {{ quadra.endereco }}
                             <br>
-                            <a href="#" class="btn btn-dark mt-5">Detalhes</a>
+                            <a href="{% url 'detalhes_quadra' quadra.id %}" class="btn btn-dark mt-5">Detalhes</a>
                         </div>
                     </div>
                 </div>

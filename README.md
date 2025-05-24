@@ -55,19 +55,3 @@ Acessar o padrão do Python:
 Acessar o sistema administrativo padrão do Django:
     http://127.0.0.1:8000/admin
 
-
- 
-
-
-
- 
-
-Acessar o sistema administrativo do python  
-
-    http://127.0.0.1:8000/admin/ 
-
- 
-
-Criar app 
-
-    python manage.py startapp quadras

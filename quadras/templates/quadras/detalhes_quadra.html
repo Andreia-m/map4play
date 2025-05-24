@@ -1,0 +1,54 @@
+{% extends "quadras/base.html" %}
+
+{% block content %}
+<style>
+
+  /* Card com altura aumentada e posicionamento relativo para o botão */
+  .detalhes-card {
+    min-height: 400px; /* Ajuste conforme necessário para aumentar 1/3 da altura */
+    position: relative;
+  }
+  /* Nome da quadra com fonte ajustada e cor adequada */
+  .quadra-nome {
+    margin-top: 20px;
+    color: #333;
+  }
+  /* Endereço com fonte menor e mais espaço abaixo */
+  .quadra-endereco {
+    margin-bottom: 2rem;
+    color: #666;
+  }
+  /* Botão Voltar posicionado no canto inferior direito do card */
+  .btn-voltar {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+  }
+</style>
+
+<div class="container my-3">
+  <div class="card detalhes-card shadow-sm">
+    <div class="card-body bg-light">
+      <!-- Nome e endereço centralizados -->
+      <h2 class="card-title text-center quadra-nome">{{ quadra.nome }}</h2>
+      <h6 class="card-subtitle text-center quadra-endereco">{{ quadra.endereco }}</h6>
+      
+      <!-- Informações dispostas em duas colunas -->
+      <div class="row">
+        <div class="col-md-6">
+          <h5>Estrutura Física</h5>
+          <p>{{ quadra.estrutura_fisica }}</p>
+        </div>
+        <div class="col-md-6">
+          <h5>Informações sobre os jogos</h5>
+          <p>{{ quadra.informacoes_jogos }}</p>
+        </div>
+      </div>
+      <br>
+      <br>
+      <!-- Botão Voltar no canto inferior direito -->
+      <a href="{% url 'home' %}" class="btn btn-dark btn-voltar">Voltar</a>
+    </div>
+  </div>
+</div>
+{% endblock %}
